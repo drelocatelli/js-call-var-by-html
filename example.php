@@ -7,8 +7,8 @@ ${texto}
 ${"\n"}
 ${2+2}
 ${2*20}
-${PHP: 'ola mundo';}
-${PHP: $variavelPHP;}
+${'ola mundo'}
+${$variavelPHP}
 
 <script>
     let name = 'Andressa';
