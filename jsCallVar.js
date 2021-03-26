@@ -7,10 +7,16 @@ finds.forEach(function(i){
     let variableName = i.replace('$','').replace('{','').replace('}','')
     variableName = eval(variableName)    
     
+    // placeholders
     if(variableName == '\n'){
         variableName = '<br>'
     }else if(variableName == '\t'){
         variableName = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+    }
+
+    // php
+    if(variableName == /PHP: (.*?)*\b/){
+        variableName = `<?php ${variableName}; ?>`
     }
     
     document.body.innerHTML = document.body.innerHTML.replace(i, variableName)

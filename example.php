@@ -3,6 +3,7 @@ ${texto}
 ${"\n"}
 ${2+2}
 ${2*20}
+${PHP: 'ola mundo'}
 
 <script>
     let name = 'Andressa';
