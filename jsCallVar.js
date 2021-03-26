@@ -7,7 +7,7 @@ finds.forEach(function(i){
     let variableName = i.replace('${','').replace('}','')
 
     if(variableName.startsWith($)){
-        variableName = `<?php echo ${variableName} ?>`
+        variableName = `<?php echo ${variableName}; ?>`
     }else{
         variableName = eval(variableName) 
         // placeholders
