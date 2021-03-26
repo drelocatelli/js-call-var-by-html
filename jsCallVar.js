@@ -7,17 +7,20 @@ finds.forEach(function(i){
     let variableName = i.replace('$','').replace('{','').replace('}','')
 
     // php
-    if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
-        variableName = '$'+variableName.replace('PHP: ', '')
-        variableName = `<?php echo ${variableName}; ?>`
-        
-    }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
-        variableName = variableName.replace('PHP: ', '')
-        variableName = `<?php echo ${variableName}; ?>`
+    if(variableName.startsWith('PHP: ')){
+        if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
+            variableName = '$'+variableName.replace('PHP: ', '')
+            variableName = `<?php echo ${variableName}; ?>`
+            
+        }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
+            variableName = variableName.replace('PHP: ', '')
+            variableName = `<?php echo ${variableName}; ?>`
+        }
+    }else{
+        variableName = eval(variableName) 
 
     }
-    
-    variableName = eval(variableName) 
+
     
     // placeholders
     if(variableName == '\n'){
