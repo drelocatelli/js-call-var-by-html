@@ -7,7 +7,7 @@ finds.forEach(function(i){
     let variableName = i.replace('${','').replace('}','')
 
     if((/\$[A-Za-z]*/gm).test(variableName)){
-        variableName = `<?php echo ${variableName}; ?>`
+        variableName = eval(`<?php echo ${variableName}; ?>`)
     }else{
         variableName = eval(variableName) 
         // placeholders
