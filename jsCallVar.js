@@ -9,7 +9,8 @@ finds.forEach(function(i){
     // php
     if(variableName.startsWith('PHP: ')){
         if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
-            variableName = '$'+variableName.replace('PHP: ', '')
+            variableName = variableName.replace('PHP: ', '')
+            variableName = '$'+variableName
             variableName = `<?php echo ${variableName}; ?>`
             
         }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
