@@ -5,7 +5,8 @@ let finds = document.body.innerHTML.match(variables)
 finds.forEach(function(i){
     
     let variableName = i.replace('$','').replace('[','').replace(']','')
-    variableName = eval(variableName)    
+    variableName = eval(variableName) 
+    console.log(variableName)   
     
     // placeholders
     if(variableName == '\n'){
