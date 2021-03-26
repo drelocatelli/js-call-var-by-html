@@ -5,7 +5,6 @@ $[2+2]
 $[2*20]
 $[PHP: 'ola mundo em PHP']
 $[PHP: i = 0; while(i < 10){i++; echo i;}]
-aaaaaaaa
 
 <script>
     let name = 'Andressa';
