@@ -8,13 +8,13 @@ finds.forEach(function(i){
 
     // php
     if(variableName.startsWith('PHP: ')){
+        variableName = variableName.replace('PHP: ', '')
+
         if(variableName == /[a-zA-Z0-9 ]*/gm){
-            variableName = variableName.replace('PHP: ', '')
             variableName = '$'+variableName
             variableName = `<?php echo ${variableName}; ?>`
             
         }else if(variableName == /'[a-zA-Z0-9 ]*'/gm){
-            variableName = variableName.replace('PHP: ', '')
             variableName = `<?php echo ${variableName}; ?>`
         }
     }else{
