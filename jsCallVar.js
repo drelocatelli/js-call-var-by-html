@@ -4,7 +4,7 @@ let finds = document.body.innerHTML.match(variables)
 
 finds.forEach(function(i){
     
-    let variableName = i.replace('$','').replace('{','').replace('}','')
+    let variableName = i.replace('${','').replace('}','')
 
     if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
         variableName = '$'+variableName
