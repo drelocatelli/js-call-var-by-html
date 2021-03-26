@@ -1,4 +1,4 @@
-const variables = /\$[(.*?)]/gm
+const variables = /\${(.*?)}/gm
 
 let finds = document.body.innerHTML.match(variables)
 
