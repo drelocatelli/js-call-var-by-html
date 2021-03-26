@@ -16,9 +16,13 @@ finds.forEach(function(i){
 
     // php
     if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
+        
         variableName = `<?php echo $${variableName}; ?>`
+        
     }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
+
         variableName = `<?php echo ${variableName}; ?>`
+        
     }
     
     document.body.innerHTML = document.body.innerHTML.replace(i, variableName)
