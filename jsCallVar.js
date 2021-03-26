@@ -19,15 +19,16 @@ finds.forEach(function(i){
         }
     }else{
         variableName = eval(variableName) 
+        // placeholders
+        if(variableName == '\n'){
+            variableName = '<br>'
+        }else if(variableName == '\t'){
+            variableName = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+        }
     }
 
     
-    // placeholders
-    if(variableName == '\n'){
-        variableName = '<br>'
-    }else if(variableName == '\t'){
-        variableName = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-    }
+    
 
 
     console.log(variableName)
