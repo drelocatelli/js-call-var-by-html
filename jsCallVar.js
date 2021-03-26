@@ -18,7 +18,6 @@ finds.forEach(function(i){
         }
     }else{
         variableName = eval(variableName) 
-
     }
 
     
