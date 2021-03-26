@@ -19,7 +19,5 @@ finds.forEach(function(i){
         }
     }
 
-    console.log(variableName)
-    
     document.body.innerHTML = document.body.innerHTML.replace(i, variableName)
 });
