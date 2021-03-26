@@ -17,12 +17,12 @@ finds.forEach(function(i){
     // php
     if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
         
-        variableName = `<?php echo $${variableName}; ?>`
+        variableName = `<?php echo $${variableName.replace('PHP: ', '')}; ?>`
         
     }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
 
-        variableName = `<?php echo ${variableName}; ?>`
-        
+        variableName = `<?php echo ${variableName.replace('PHP: ', '')}; ?>`
+
     }
     
     document.body.innerHTML = document.body.innerHTML.replace(i, variableName)
