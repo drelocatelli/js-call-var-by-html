@@ -6,8 +6,7 @@ finds.forEach(function(i){
     
     let variableName = i.replace('${','').replace('}','')
 
-    if(variableName == /PHP: (.*?)*/gm){
-        variableName = variableName.replace('PHP: ', '')
+    if(variableName.startsWith($)){
         variableName = `<?php echo ${variableName} ?>`
         
     }else{
