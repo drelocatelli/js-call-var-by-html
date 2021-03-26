@@ -24,6 +24,8 @@ finds.forEach(function(i){
         variableName = `<?php echo ${variableName}; ?>`
 
     }
+
+    console.log(variableName)
     
     document.body.innerHTML = document.body.innerHTML.replace(i, variableName)
 });
