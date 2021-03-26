@@ -5,14 +5,6 @@ let finds = document.body.innerHTML.match(variables)
 finds.forEach(function(i){
     
     let variableName = i.replace('$','').replace('{','').replace('}','')
-    variableName = eval(variableName) 
-    
-    // placeholders
-    if(variableName == '\n'){
-        variableName = '<br>'
-    }else if(variableName == '\t'){
-        variableName = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-    }
 
     // php
     if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
@@ -24,6 +16,16 @@ finds.forEach(function(i){
         variableName = `<?php echo ${variableName}; ?>`
 
     }
+    
+    variableName = eval(variableName) 
+    
+    // placeholders
+    if(variableName == '\n'){
+        variableName = '<br>'
+    }else if(variableName == '\t'){
+        variableName = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+    }
+
 
     console.log(variableName)
     
