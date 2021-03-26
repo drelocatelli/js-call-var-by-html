@@ -4,7 +4,7 @@ let finds = document.body.innerHTML.match(variables)
 
 finds.forEach(function(i){
     
-    let variableName = i.replace('$','').replace('{','').replace('}','')
+    let variableName = i.replace('$','').replace('[','').replace(']','')
     variableName = eval(variableName)    
     
     // placeholders
@@ -15,7 +15,7 @@ finds.forEach(function(i){
     }
 
     // php
-    if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
+    if(variableName == / PHP: [a-zA-Z0-9 ]*/gm){
         variableName = `<?php ${variableName}; ?>`
     }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
         variableName = `<?php echo ${variableName}; ?>`
