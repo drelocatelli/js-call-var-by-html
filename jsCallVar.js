@@ -6,9 +6,9 @@ finds.forEach(function(i){
     
     let variableName = i.replace('${','').replace('}','')
 
-    if((/\$[A-Za-z]*/gm).test(variableName)){
-        variableName = eval(`<?php echo ${variableName}; ?>`)
-    }else{
+    // if((/\$[A-Za-z]*/gm).test(variableName)){
+    //     variableName = eval(`<?php echo ${variableName}; ?>`)
+    // }else{
         variableName = eval(variableName) 
         // placeholders
         if(variableName == '\n'){
@@ -16,7 +16,7 @@ finds.forEach(function(i){
         }else if(variableName == '\t'){
             variableName = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
         }
-    }
+    // }
 
     document.body.innerHTML = document.body.innerHTML.replace(i, variableName)
 });
