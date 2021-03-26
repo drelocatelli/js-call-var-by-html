@@ -20,7 +20,7 @@ finds.forEach(function(i){
         variableName = `<?php echo $${variableName}; ?>`
         
     }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
-
+        variableName = variableName.replace('PHP: ', '')
         variableName = `<?php echo ${variableName}; ?>`
 
     }
