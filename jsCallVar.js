@@ -8,7 +8,6 @@ finds.forEach(function(i){
 
     if(variableName.startsWith($)){
         variableName = `<?php echo ${variableName} ?>`
-        
     }else{
         variableName = eval(variableName) 
         // placeholders
