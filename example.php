@@ -1,3 +1,7 @@
+<?php
+    $variavelPHP = 'variavel php';
+?>
+
 Olá mundo! ${"\t"} ${name}
 ${texto}
 ${"\n"}
