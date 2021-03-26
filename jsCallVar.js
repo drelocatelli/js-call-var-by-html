@@ -10,8 +10,6 @@ finds.forEach(function(i){
         variableName = variableName.replace('PHP: ', '')
         variableName = `<?php echo ${variableName} ?>`
         
-    }else if(variableName == ){
-
     }else{
         variableName = eval(variableName) 
         // placeholders
