@@ -8,7 +8,7 @@ finds.forEach(function(i){
 
     if(variableName == /PHP: (.*?)*/gm){
         variableName = variableName.replace('PHP: ', '')
-        variableName = `<?php echo ${variableName}; ?>`
+        variableName = `<?php echo ${variableName} ?>`
         
     }else{
         variableName = eval(variableName) 
