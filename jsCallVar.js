@@ -15,7 +15,7 @@ finds.forEach(function(i){
     }
 
     // php
-    if(variableName == / PHP: [a-zA-Z0-9 ]*/gm){
+    if(variableName == /PHP: [a-zA-Z0-9 ]*/gm){
         variableName = `<?php ${variableName}; ?>`
     }else if(variableName == /PHP: '[a-zA-Z0-9 ]*'/gm){
         variableName = `<?php echo ${variableName}; ?>`
